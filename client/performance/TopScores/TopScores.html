@@ -1,0 +1,208 @@
+<template name="TopScores"> 
+  <div class="container" style="width: inherit;">
+	<div class="col-md-12">
+      	<div class="row">
+        	<div class="col-md-4">
+            	<div class="row" style="margin-top: 2.0em;">
+            		<div class="col-md-12">
+        				<div class="row">
+        					<div class="col-md-12 col-sm-12 col-xs-12">
+	                            <div class="col-md-3 col-sm-3 col-xs-3" style="text-align:left;">
+	                                <img class="img avatar avatar-original" height="30px" width="30px" style="-webkit-user-select:none; display:block; margin:auto;" src="/topScores/icon_health.svg" alt="TopHealth">
+	                            </div>
+	                            <div class="col-md-9 col-sm-9 col-xs-9" style="text-align:left; padding: 0px;">
+	                                <p class="lead">Top Health</p>
+	                            </div>
+	                        </div>
+                        </div> 
+            			<div class="panel-body" style="padding: 0px;">
+							<table class="table table-hover table-bordered table-condensed" id="topScores">
+								<!--
+								<colgroup>
+									<col style="width: 15%;">
+									<col style="width: 70%;">
+									<col style="width: 15%;">
+								</colgroup>
+								
+								<thead>
+									<tr>
+										<th class="col-md-1"><span style="color:black;">Player</span></th>
+										<th class="col-md-1"><span style="color:black;"></span></th>
+										<th class="col-md-1"><span style="color:black;">Score</span></th>
+									</tr>
+								</thead>
+								-->
+								<tbody>
+									{{#each userHealthScores}}
+										<tr class="divRow">
+											<td>
+												<div class="col-md-12" style="text-align: left;"><img src="{{avatar}}" height="40px" width="40px"/></div>
+											</td>
+											<td>
+												<div class="col-md-12" style="text-align: left;">{{name}}</div>
+											</td>
+											<td>
+												<div class="col-md-12" style="text-align: left;">Points {{points}}</div>
+											</td> 
+										</tr> 
+									{{/each}}
+								</tbody>
+							</table> 
+						</div>
+            		</div>
+            	</div>
+        	</div>
+        	<div class="col-md-4">
+            	<div class="row" style="margin-top: 2.0em;">
+            		<div class="col-md-12">
+        				<div class="row">
+        					<div class="col-md-12 col-sm-12 col-xs-12">
+	                            <div class="col-md-3 col-sm-3 col-xs-3" style="text-align:left;">
+	                                <img class="img avatar avatar-original" height="30px" width="30px" style="-webkit-user-select:none; display:block; margin:auto;" src="/topScores/icon_knowledge.svg" alt="TopKnowledge">
+	                            </div>
+	                            <div class="col-md-9 col-sm-9 col-xs-9" style="text-align:left; padding: 0px;">
+	                                <p class="lead">Top Knowledge</p>
+	                            </div>
+	                        </div>
+                        </div> 
+            			<div class="panel-body" style="padding: 0px;">
+							<table class="table table-hover table-bordered table-condensed" id="topScores">
+								<!--
+								<colgroup>
+									<col style="width: 15%;">
+									<col style="width: 70%;">
+									<col style="width: 15%;">
+								</colgroup>
+								
+								<thead>
+									<tr>
+										<th class="col-md-1"><span style="color:black;">Player</span></th>
+										<th class="col-md-1"><span style="color:black;"></span></th>
+										<th class="col-md-1"><span style="color:black;">Score</span></th>
+									</tr>
+								</thead>
+								-->
+								<tbody>
+									{{#each userKnowledgeScores}}
+										<tr class="divRow">
+											<td>
+												<div class="col-md-12" style="text-align: left;"><img src="{{avatar}}" height="40px" width="40px"/></div>
+											</td>
+											<td>
+												<div class="col-md-12" style="text-align: left;">{{name}}</div>
+											</td>
+											<td>
+												<div class="col-md-12" style="text-align: left;">Points {{points}}</div>
+											</td> 
+										</tr> 
+									{{/each}}
+								</tbody>
+							</table> 
+						</div>
+            		</div>
+            	</div>
+        	</div>
+        	<div class="col-md-4">
+            	<div class="row" style="margin-top: 2.0em;">
+            		<div class="col-md-12">
+        				<div class="row">
+        					<div class="col-md-12 col-sm-12 col-xs-12">
+	                            <div class="col-md-3 col-sm-3 col-xs-3" style="text-align:left;">
+	                                <img class="img avatar avatar-original" height="30px" width="30px" style="-webkit-user-select:none; display:block; margin:auto;" src="/topScores/icon_experience.svg" alt="TopExperience">
+	                            </div>
+	                            <div class="col-md-9 col-sm-9 col-xs-9" style="text-align:left; padding: 0px;">
+	                                <p class="lead">Top Experience</p>
+	                            </div>
+	                        </div> 
+                        </div> 
+            			<div class="panel-body" style="padding: 0px;">
+							<table class="table table-hover table-bordered table-condensed" id="topScores">
+								<!--
+								<colgroup>
+									<col style="width: 15%;">
+									<col style="width: 70%;">
+									<col style="width: 15%;">
+								</colgroup>
+								
+								<thead>
+									<tr>
+										<th class="col-md-1"><span style="color:black;">Player</span></th>
+										<th class="col-md-1"><span style="color:black;"></span></th>
+										<th class="col-md-1"><span style="color:black;">Score</span></th>
+									</tr>
+								</thead>
+								-->
+								<tbody>
+									{{#each userExperienceScores}} 
+										<tr class="divRow">
+											<td>
+												<div class="col-md-12" style="text-align: left;"><img src="{{avatar}}" height="40px" width="40px"/></div>
+											</td>
+											<td>
+												<div class="col-md-12" style="text-align: left;">{{name}}</div>
+											</td>
+											<td>
+												<div class="col-md-12" style="text-align: left;">Points {{points}}</div>
+											</td> 
+										</tr> 
+									{{/each}}
+								</tbody>
+							</table> 
+						</div>
+            		</div>
+            	</div>
+        	</div>
+    	</div>
+    </div>
+  </div>
+
+	
+
+ 
+
+  <!--
+	<h4>TOP HEALTH</h4>
+	{{#each userHealthScores}}
+		<div class="divTable">
+
+		  <div class="divRow">
+			  <div class="divCell">{{@index}}</div>
+			  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
+			  <div class="divCell">{{name}}</div>
+			  <div class="divCell">{{totalHealthScore}}</div>
+		  </div>
+
+		</div>
+	{{/each}}
+  	<br>
+
+	<h4>TOP KNOWLEDGE</h4>
+	{{#each userKnowledgeScores}}
+		<div class="divTable">
+
+		  <div class="divRow">
+			  <div class="divCell">{{@index}}</div>
+			  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
+			  <div class="divCell">{{name}}</div>
+			  <div class="divCell">{{totalKnowledgeScore}}</div>
+		  </div>
+
+		</div>
+	{{/each}}
+  	<br>
+
+	<h4>TOP EXPERIENCE</h4>
+	{{#each userExperienceScores}}
+		<div class="divTable">
+
+		  <div class="divRow">
+			  <div class="divCell">{{@index}}</div>
+			  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
+			  <div class="divCell">{{name}}</div>
+			  <div class="divCell">{{totalExperienceScore}}</div>
+		  </div>
+
+		</div>
+	{{/each}}
+	-->
+</template>

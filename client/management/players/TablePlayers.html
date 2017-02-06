@@ -1,0 +1,20 @@
+<template name="TablePlayers">  
+
+  {{#if isPlayersElementActive playersTemplateName}}
+    
+        {{> Template.dynamic template = playersTemplateName }}
+    
+    {{else}}
+        
+        {{#if isPlayersElementActive newTemplateName}}
+
+            {{> Template.dynamic template = newTemplateName }}
+        
+        {{else}}
+        
+            {{> Template.dynamic template = editTemplateName }}
+        
+        {{/if}}        
+    {{/if}}
+    
+</template>

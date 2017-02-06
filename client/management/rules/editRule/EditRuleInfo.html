@@ -1,0 +1,89 @@
+<template name="EditRuleInfo">  
+  <div class="container" style="width: inherit;"> 
+    <div class="row">
+      <div class="col-md-12">    
+        <form id ="editRule">  
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="editRuleName" class="col-form-label" style="font-weight: normal">Name</label>
+              <input class="form-control" type="text" value="{{academyRule.[0].name}}" id="editRuleName" required>
+            </div>
+          </div> 
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="editRuleType" class="col-form-label" style="font-weight: normal">Type</label>
+              <select class="selectpicker form-control" id="editRuleType">  
+                <option selected>{{academyRule.[0].type}}</option>        
+                {{#each ruleType}}
+                  <option value="{{name}}">{{value}}</option> 
+                {{/each}}
+              </select> 
+            </div>
+          </div> 
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="editIdBadge" class="col-form-label" style="font-weight: normal">Badge</label>
+              <select class="selectpicker form-control" id="editIdBadge">   
+                <option selected>{{academyRule.[0].typeName}}</option>       
+                {{#each badges}}
+                  <option value="{{name}}">{{name}}</option>
+                {{/each}}
+              </select> 
+            </div>
+          </div> 
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="editIdChallenge" class="col-form-label" style="font-weight: normal">Challenge</label>
+              <select class="selectpicker form-control" id="editIdChallenge">
+                <option selected>{{academyRule.[0].typeName}}</option>            
+                {{#each challenges}}
+                  <option value="{{name}}">{{name}}</option>
+                {{/each}}
+              </select> 
+            </div>
+          </div> 
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="editRuleThreshold" class="col-form-label" style="font-weight: normal">Threshold</label>
+              <select class="selectpicker form-control" id="editRuleThreshold">   
+                <option selected>{{academyRule.[0].threshold}}</option>         
+                {{#each tresholdValues}}
+                  <option value="{{name}}">{{value}}</option>
+                {{/each}}
+              </select> 
+            </div>
+          </div> 
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="editRulePoints" class="col-form-label" style="font-weight: normal">Points</label>
+              <input class="form-control" type="text" value="{{academyRule.[0].points}}" id="editRulePoints" required>
+            </div>
+          </div>
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="editPointsType" class="col-form-label" style="font-weight: normal">Point Type</label>
+              <select class="selectpicker form-control" id="editPointsType"> 
+                <option selected>{{academyRule.[0].pointsType}}</option>           
+                {{#each pointTypes}}
+                  <option value="{{name}}">{{value}}</option>
+                {{/each}}
+              </select> 
+            </div>
+          </div>            
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="editRuleDescription" class="col-form-label" style="font-weight: normal">Description</label>
+              <textarea class="form-control" rows="3" maxlength="450" id="editRuleDescription" value="{{academyRule.[0].description}}"></textarea>
+            </div>
+          </div>          
+          <div class="form-group row">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-default btn-circle pull-right" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
+              <button type="button" id="nopRules" class="btn btn-default btn-circle pull-left" style="padding: 0px 0px 0px 0px;" ><i class="glyphicon glyphicon-remove"></i></button>
+            </div>
+          </div> 
+        </form>
+      </div> 
+    </div> 
+  </div> 
+</template>

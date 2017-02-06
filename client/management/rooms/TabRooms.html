@@ -1,0 +1,20 @@
+<template name="TabRooms">  
+
+  {{#if isRoomsElementActive roomsTemplateName}}
+    
+        {{> Template.dynamic template = roomsTemplateName }}
+    
+    {{else}}
+        
+        {{#if isRoomsElementActive newRoomName}}
+
+            {{> Template.dynamic template = newRoomName }}
+        
+        {{else}}
+        
+            {{> Template.dynamic template = editRoomName }}
+        
+        {{/if}}        
+    {{/if}}
+    
+</template>

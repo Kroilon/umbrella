@@ -1,0 +1,20 @@
+<template name="TabRules">  
+
+  {{#if isRulesElementActive rulesTemplateName}}
+    
+        {{> Template.dynamic template = rulesTemplateName }}
+    
+    {{else}}
+        
+        {{#if isRulesElementActive newRuleName}}
+
+            {{> Template.dynamic template = newRuleName }}
+        
+        {{else}}
+        
+            {{> Template.dynamic template = editRuleName }}
+        
+        {{/if}}        
+    {{/if}}
+    
+</template>

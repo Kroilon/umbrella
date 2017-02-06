@@ -1,0 +1,71 @@
+<template name="EditBadgeInfo">  
+  <div class="container" style="width: inherit;"> 
+    <div class="row">
+      <div class="col-md-12">    
+        <form id ="addBadge"> 
+          <div class="row" style="margin-top: 1.5em;">
+            <div class="col-md-4 text-center">
+              <img class="img-circle avatar avatar-original" id="editBadgeAvatar" style="-webkit-user-select:none; display:block; margin:auto;" src="{{academyBadge.[0].image}}" alt="Avatar...">
+              <!--
+              <img class="avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none; display:block; margin:auto;" src="//placehold.it/150x150" alt="Avatar...">
+              -->
+              <br>
+              <input id="imageInput" style="display:block; margin:auto;" type="file"> 
+              <hr>
+            </div>
+            <div class="col-md-8">
+              <div class="form-group row">                
+                <div class="col-md-12">
+                  <label for="editBadgeName" class="col-form-label" style="font-weight: normal">Name</label>
+                  <input class="form-control" type="text" value="{{academyBadge.[0].name}}" id="editBadgeName" required>
+                </div>
+              </div> 
+                 
+              <div class="form-group row">                
+                <div class="col-md-12">
+                  <label for="editBadgePoints" class="col-form-label" style="font-weight: normal">Points</label>
+                  <input class="form-control" type="text" value="{{academyBadge.[0].points}}" id="editBadgePoints" required>
+                </div>
+              </div>
+              <div class="form-group row">                
+                <div class="col-md-12">
+                  <label for="editPointsType" class="col-form-label" style="font-weight: normal">Point Type</label>
+                  <select class="selectpicker form-control" id="editPointsType">          
+                    <option selected>{{academyBadge.[0].pointsType}}</option>
+                    {{#each pointTypes}}
+                      <option value="{{name}}">{{value}}</option>
+                    {{/each}}
+                  </select> 
+                </div>
+              </div>               
+            </div>  
+          </div> 
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="editBadgeType" class="col-form-label" style="font-weight: normal">Type</label>
+              <select class="selectpicker form-control" id="editBadgeType">      
+                <option selected>{{academyBadge.[0].type}}</option>
+                {{#each badgeType}}
+                  <option value="{{name}}">{{value}}</option>
+                {{/each}}     
+              </select>
+            </div>
+          </div> 
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="editBadgeDescription" class="col-form-label" style="font-weight: normal">Description</label>
+              <textarea class="form-control" rows="3" maxlength="450" id="editBadgeDescription" value="{{academyBadge.[0].description}}" required></textarea>
+            </div>
+          </div>           
+          <div class="form-group row">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-default btn-circle pull-right" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
+              <button type="button" id="nopBadge" class="btn btn-default btn-circle pull-left" style="padding: 0px 0px 0px 0px;" ><i class="glyphicon glyphicon-remove"></i></button>
+            </div>
+          </div> 
+        </form>
+      </div> 
+    </div> 
+  </div> 
+</template>
+

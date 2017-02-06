@@ -1,0 +1,19 @@
+<template name="Leaderboard">
+
+    {{#if (isElementActive "BoardTable")}}
+    
+        {{> Template.dynamic template = tableTemplateName }}
+    
+    {{else}}
+        
+        {{#if (isElementActive "PlayerDashboard")}}
+
+            {{> Template.dynamic template = dashboardTemplateName }}
+        
+        {{else}}
+        
+            {{> Template.dynamic template = performanceTemplateName }}
+        
+        {{/if}}        
+    {{/if}}
+</template>

@@ -1,0 +1,13 @@
+<template name="TabAcademy">  
+
+  {{#if isAcademiesElementActive academiesTable}}
+    
+    {{> Template.dynamic template = academiesTable }}
+    
+  {{else}}
+
+    {{> Template.dynamic template = newAcademy }}
+
+  {{/if}}
+
+</template>

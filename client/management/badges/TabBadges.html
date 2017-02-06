@@ -1,0 +1,20 @@
+<template name="TabBadges">  
+
+  {{#if isBadgesElementActive badgesTemplateName}}
+    
+        {{> Template.dynamic template = badgesTemplateName }}
+    
+    {{else}}
+        
+        {{#if isBadgesElementActive newBadgeName}}
+
+            {{> Template.dynamic template = newBadgeName }}
+        
+        {{else}}
+        
+            {{> Template.dynamic template = editBadgeName }}
+        
+        {{/if}}        
+    {{/if}}
+    
+</template>
