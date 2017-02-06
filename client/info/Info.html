@@ -1,5 +1,31 @@
-<template name="Info">
-  <div class="container"> 
+<template name="Info">  
+  <div class="container" style="width: inherit;"> 
     <h2>Info</h2>
-  </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12">    
+        <form id ="info">      
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <p class="lead">
+  				Dear user, we belive in ever improving in order to provide you with the best service possible. For that reason your feedback is extremely important for us. In the box below you are welcome to leave your suggestions or issue descriptions. Thank you for your feedback!
+			  </p> 
+            </div>
+          </div>               
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="infoDescription" class="col-form-label" style="font-weight: normal">Description</label>
+              <textarea class="form-control" rows="6" maxlength="600" id="infoDescription" placeholder="Insert description..." required></textarea>
+            </div>
+          </div>           
+          <div class="form-group">
+			<div class="col-md-12">
+				<input id="myLoginBtn" type="submit" class="btn btn-default pull-right" style="margin-top:2.5em; background: #FFC000; border: solid 2px #FFC000;" value="Submit" />				
+			</div>
+		  </div>
+        </form>
+      </div> 
+    </div> 
+  </div> 
 </template>
+
