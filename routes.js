@@ -8,6 +8,50 @@ FlowRouter.route('/', {
     }
 });
 
+// Dashboard
+FlowRouter.route('/dashboard', {
+    name: 'dashboard',
+    action() {
+        BlazeLayout.render("AppLayout", {
+            main: "Dashboard"
+        });
+    }
+});
+
+// Pick
+FlowRouter.route('/pick', {
+    name: 'pick',
+    action() {
+        BlazeLayout.render("AppLayout", {
+            main: "Pick"
+        });
+    }
+});
+
+// Drop
+FlowRouter.route('/drop', {
+    name: 'drop',
+    action() {
+        BlazeLayout.render("AppLayout", {
+            main: "Drop"
+        });
+    }
+});
+
+
+// Info
+FlowRouter.route('/info', {
+    name: 'info',
+    action() {
+        BlazeLayout.render("AppLayout", {
+            main: "Info"
+        });
+    }
+});
+
+
+/*______________________________________________________________*/
+
 // Character Table
 FlowRouter.route('/characters/:page', {
     name: 'characters',
@@ -37,15 +81,6 @@ FlowRouter.route('/characters', {
     }
 });
 
-// Map
-FlowRouter.route('/dashboard', {
-    name: 'dashboard',
-    action() {
-        BlazeLayout.render("AppLayout", {
-            main: "Dashboard"
-        });
-    }
-});
 
 // Performance
 FlowRouter.route('/performance', {

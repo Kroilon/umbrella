@@ -14,11 +14,11 @@ header {
     width: 100%;
 }
 
-.header-nav > a {
+.header-nav > img {
     float: left;
 }
 
-.header-nav > a img {
+.header-nav > img {
     vertical-align: middle;
     width: 90px;
     margin-top: 6px;

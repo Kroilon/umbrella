@@ -2,3 +2,24 @@
     width: 40px;
     height: 25px;
 }
+
+.app-nav {
+    z-index: 9;
+    position: fixed;
+    width: 80px;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background: #7F7F7F;
+    overflow: hidden;
+    color: #27272b;
+    padding-top: 100px;
+    transition: all 0.3s ease;
+    border-right: solid 1px #CCC;
+}
+
+.list-group-item {
+    background: #7F7F7F;
+}
+
+
