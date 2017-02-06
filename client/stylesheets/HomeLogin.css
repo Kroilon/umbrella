@@ -1,0 +1,16 @@
+.btn, .btn-text, .btn-primary, .btn-default, button {
+    background: #FFC000;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 800;
+    padding: 10px 51px 7px;
+    color: #FFF;
+    letter-spacing: 1px;
+    border: solid 2px #FFC000;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}

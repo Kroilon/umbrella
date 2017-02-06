@@ -2,7 +2,7 @@ header {
     top: 0;
     width: 100%;
     position: fixed;
-    background-color: white;
+    background-color: #7F7F7F;
     z-index: 10;
     height: 63px;
     display: block;
