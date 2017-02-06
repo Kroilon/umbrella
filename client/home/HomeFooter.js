@@ -1,10 +1,9 @@
 import { Template } from 'meteor/templating';
 
 Template.HomeFooter.helpers({
-  academyYear() {
+  umbrellaYear() {
     let currentDate = new Date();
 	let currentYear = currentDate.getFullYear(); 
     return currentYear;
   }
-
 });

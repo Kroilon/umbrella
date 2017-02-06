@@ -4,108 +4,43 @@ Run file to Init the database with dummy data
 Do
 Step 1 -> meteor mongo
 Step 2 -> use meteor
-Step 3-> load(".database/initAcademy.js")
+Step 3-> load(".database/initUmbrella.js")
 
 */
 
-//Academy
-db.academy.drop();
-db.createCollection("academy");
-db.academy.insert({
+//Umbrella
+db.umbrella.drop();
+db.createCollection("umbrella");
+db.umbrella.insert({
 	"name": "Academia Setembro 2016",
-	"date": "Sat Dec 17 2016 15:55:21",
+	"date": "Sat Feb 07 2017 15:55:21",
 	"energyLevel": 5,	
 	"dailyMessage": "Bem Vindos a Kroilon",
 	"homeMessage": "#ficaadica",
 	"currentRoom": "Cockroach Entry",
 	"countDays": 1,	
-	"teamScore": [
-		{
-			"date": "Sat Dec 17 2016 15:55:21",
-			"name": "Team Balance",
-			"points": 100,
-			"badge": "",
-			"room": "Cockroach Entry"
-		},
-		{
-			"date": "Sat Dec 17 2016 15:55:21",
-			"name": "Team Balance",
-			"points": 200,
-			"badge": "",
-			"room": "Cockroach Entry"
-		},
-		{
-			"date": "Sat Dec 17 2016 15:55:21",
-			"name": "Team Balance",
-			"points": 10,
-			"badge": "",
-			"room": "Cockroach Entry"
-		},
-		{
-			"date": "Sat Dec 17 2016 15:55:21",
-			"name": "Team Balance",
-			"points": 300,
-			"badge": "",
-			"room": "Cockroach Entry"
-		},
-		{
-			"date": "Sat Dec 18 2016 15:55:21",
-			"name": "Team Balance",
-			"points": 330,
-			"badge": "",
-			"room": "Cockroach Entry"
-		},
-		{
-			"date": "Sat Dec 19 2016 15:55:21",
-			"name": "Team Balance",
-			"points": 400,
-			"badge": "",
-			"room": "Cockroach Entry"
-		},
-		{
-			"date": "Sat Dec 20 2016 15:55:21",
-			"name": "Team Balance",
-			"points": 350,
-			"badge": "",
-			"room": "Cockroach Entry"
-		},
-		{
-			"date": "Sat Dec 20 2016 15:55:21",
-			"name": "Team Balance",
-			"points": 420,
-			"badge": "",
-			"room": "Cockroach Entry"
-		},
-		{
-			"date": "Sat Dec 20 2016 15:55:21",
-			"name": "Team Balance",
-			"points": 440,
-			"badge": "",
-			"room": "Cockroach Entry"
-		}
-	],
 	"users":[
 		{
-			"nb": "13471",
-			"name":"Pedro Crespo",
-			"avatar": "",
-			"email": "pedro.crespo@novabase.pt",
-			"password": "321",
-			"profile": "Admin"
-		},
-		{
-			"nb": "20123",
-			"name":"Carla Carvalho",
-			"avatar": "",
-			"email": "carla.carvalho@novabase.pt",
-			"password": "321",
-			"profile": "Admin"
-		},
-		{
-			"nb": "21808",
+			"nb": "bmagusic",
 			"name":"Bojan Magusic",
 			"avatar": "",
-			"email": "bojan.magusic@novabase.pt",
+			"email": "bojan.magusic@celfocus.com",
+			"password": "321",
+			"profile": "Admin"
+		},
+		{
+			"nb": "tesperança",
+			"name":"Tiago Esperança",
+			"avatar": "",
+			"email": "tiago.esperança@celfocus.com",
+			"password": "321",
+			"profile": "Admin"
+		},
+		{
+			"nb": "admibn",
+			"name":"Admin",
+			"avatar": "",
+			"email": "admin@celfocus.com",
 			"password": "321",
 			"profile": "Admin"
 		},
