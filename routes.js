@@ -38,11 +38,11 @@ FlowRouter.route('/characters', {
 });
 
 // Map
-FlowRouter.route('/map', {
-    name: 'map',
+FlowRouter.route('/dashboard', {
+    name: 'dashboard',
     action() {
         BlazeLayout.render("AppLayout", {
-            main: "Map"
+            main: "Dashboard"
         });
     }
 });
