@@ -4,6 +4,13 @@ import { Devices } from '/imports/api/databasedriver.js';
 import { Locations } from '/imports/api/databasedriver.js';
 import { Session } from 'meteor/session';
 
+
+export const DROP_SCAN_LOCATION = "DropScanLocation";
+
+Template.DropScan.created = function(){
+    Session.setDefault(DROP_SCAN_LOCATION, "Hotel Miragem");
+}
+
 Template.DropScan.helpers({
 
 	dropLocations() {
@@ -19,6 +26,7 @@ Template.DropScan.events({
   "click #selectDevice" (event){
       event.preventDefault();
       //alert("DROP" + this.location );
+      Session.set(DROP_SCAN_LOCATION, this.location);
       FlowRouter.go('/scanpayment');
   }
 

@@ -4,23 +4,43 @@ import { Devices } from '/imports/api/databasedriver.js';
 import { Locations } from '/imports/api/databasedriver.js';
 import { Session } from 'meteor/session';
 
+import { DROP_SCAN_LOCATION } from '/client/drop/scan/DropScan.js';
+
 Template.ScanPayment.helpers({
 
-	dropLocations() {
+	dropLocation() {
 
-	    let locations = Locations.find({}).fetch();
-    	return locations;
-    }
+	    let location = Session.get(DROP_SCAN_LOCATION).trim();;
+    	return location;
+  }
 
 });
 
 Template.ScanPayment.events({   
 
-  "click #selectDevice" (event){
-      event.preventDefault();
-      //alert("DROP" + this.location );
-      FlowRouter.go('/scanpayment');
-  }
+
+  'submit form' (event) {
+
+    event.preventDefault();
+
+    let description = $("#infoDescription").val();
+    //console.log("DECRIPTION:" + description);
+
+    Modal.show('showModal', this); 
+
+    /*
+    Meteor.call("insertBadge", badgeData, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    });
+    */
+    
+    $("#scanPayment")[0].reset();     
+    
+    FlowRouter.go('/splash');
+
+  }  
 
 });
 
