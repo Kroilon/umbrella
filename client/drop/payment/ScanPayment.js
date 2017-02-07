@@ -12,7 +12,8 @@ Template.ScanPayment.created = function(){
 
     Meteor.call("checkSLA", function(error, result) {
         if (error) {
-            alert(error);
+            //alert(error);
+            console.log(error);
         } else {
             //Session.set("socialBalance", result);
             //alert(JSON.stringify(result));
