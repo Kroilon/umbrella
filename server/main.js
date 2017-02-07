@@ -5,6 +5,15 @@ import { Umbrella } from '/imports/api/databasedriver.js';
 
 Meteor.methods({
 
+    getSocialsBalance: function (idNumber) {
+      console.log('Method.getSocialsBalance for', idNumber);
+      var apiUrl = 'http://222.92.146.245:5066/rating/balancemgmt/v1/balance?identityNumber=' + idNumber;
+      var response = HTTP.get(apiUrl).data;
+      return response;
+    },
+
+
+  
 	  updateScore: function (id, playerId, score) {
       var currentUserId = Meteor.userId();
       Academy.update(
