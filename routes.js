@@ -59,6 +59,27 @@ FlowRouter.route('/splash', {
     }
 });
 
+// Drop Scan
+FlowRouter.route('/dropscan', {
+    name: 'dropscan',
+    action() {
+        BlazeLayout.render("AppLayout", {
+            main: "DropScan"
+        });
+    }
+});
+
+
+// Scan Payment
+FlowRouter.route('/scanpayment', {
+    name: 'scanpayment',
+    action() {
+        BlazeLayout.render("AppLayout", {
+            main: "ScanPayment"
+        });
+    }
+});
+
 /*______________________________________________________________*/
 
 // Character Table
