@@ -4,9 +4,6 @@ import { Devices } from '/imports/api/databasedriver.js';
 import { Umbrella } from '/imports/api/databasedriver.js';
 
 Meteor.methods({
-    checkTwitter: function () {
-        return Meteor.http.call("POST", "http://ecommapi.huaweiapi.com/sms/batchSendSms/v1");
-    },
 
 	  updateScore: function (id, playerId, score) {
       var currentUserId = Meteor.userId();
