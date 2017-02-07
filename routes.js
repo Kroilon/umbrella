@@ -49,6 +49,15 @@ FlowRouter.route('/info', {
     }
 });
 
+// Splash
+FlowRouter.route('/splash', {
+    name: 'splash',
+    action() {
+        BlazeLayout.render("AppLayout", {
+            main: "Splash"
+        });
+    }
+});
 
 /*______________________________________________________________*/
 

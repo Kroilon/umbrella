@@ -36,3 +36,14 @@ header {
     margin-left: 1em;
 }
 
+.header-nav > a {
+    float: left;
+}
+
+.header-nav > a {
+    vertical-align: middle;
+    width: 90px;
+    margin-top: 6px;
+    margin-left: 30px;
+}
+

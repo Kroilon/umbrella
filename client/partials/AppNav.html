@@ -1,23 +1,26 @@
 <template name="AppNav">
     <div class="app-nav" style="min-width: 100px; background: #7F7F7F;" >
         <ul id="list-group" >
-           <li> 
+            <li> 
                 <a class="list-group-item" style="border: none" href="/pick"><img src="/sideNav/pick.png" class="sidebar-icon"> <span>Pick</span></a>
             </li>
             <li>
                 <a class="list-group-item" style="border: none" href="/drop"><img src="/sideNav/drop.png" class="sidebar-icon"> <span>Drop</span></a>
             </li>
-            <li>
-                <a class="list-group-item" style="border: none" href="/dashboard"><img src="/sideNav/myUmbrella.svg" class="sidebar-icon"> <span>Dashboard</span></a>
-            </li>
+            
             <li>
                 <a class="list-group-item" style="border: none" href="/info"><img src="/sideNav/help.svg" class="sidebar-icon"> <span>Info</span></a>
             </li>
+            <li>
+                <a class="list-group-item" style="border: none" href="/dashboard"><img src="/sideNav/myUmbrella.svg" class="sidebar-icon"> <span>My Umbrella</span></a>
+            </li>
+            <!--
             {{#if isLoggedInAsAdmin}}
             <li>
                 <a class="list-group-item" style="border: none" href="/management"><img src="/sideNav/share.svg" class="sidebar-icon"> <span>Management</span></a>
             </li>
             {{/if}}
+            -->
         </ul>
     </div>
 </template>
