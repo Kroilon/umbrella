@@ -1,190 +1,151 @@
 import { Template } from 'meteor/templating';
-import { Academy } from '/imports/api/databasedriver.js';
-import { Badges } from '/imports/api/databasedriver.js';
-import { Rooms } from '/imports/api/databasedriver.js';
-import { Secrets } from '/imports/api/databasedriver.js';
+import { Umbrella } from '/imports/api/databasedriver.js';
+import { Devices } from '/imports/api/databasedriver.js';
 
 Template.Dashboard.helpers({
-	energyLevel() {
+    playerSkillsChart() {
+        return {
+            colors: ['#de4f4f', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
+                '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+            chart: {
+                polar: true,
+                type: 'line',
 
-		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		var energy_level = latestAcademy.energyLevel;
+                //Edit chart margin
+                margin: [0, 0, 0, 0],
+                //Edit chart spacing
+                spacingTop: 0,
+                spacingBottom: 0,
+                spacingLeft: 0,
+                spacingRight: 0
+            },
 
-		var img_energyLevel = "/energyLevels/energyLevels_5.png";
+            title: {
+                text: null,
+                x: -80
+            },
 
-		switch(energy_level) {	
-			case -2:
-				img_energyLevel = "/energyLevels/energyLevels_0.png";
-				break;
-			case -1:
-				img_energyLevel = "/energyLevels/energyLevels_0.png";
-				break;		
-			case 0:
-				img_energyLevel = "/energyLevels/energyLevels_0.png";
-				break;
-			case 1:
-				img_energyLevel = "/energyLevels/energyLevels_1.png";
-				break;
-			case 2:
-				img_energyLevel = "/energyLevels/energyLevels_2.png";
-				break;
-			case 3:
-				img_energyLevel = "/energyLevels/energyLevels_3.png";
-				break;
-			case 4:
-				img_energyLevel = "/energyLevels/energyLevels_4.png";
-				break;
-			case 5:
-				img_energyLevel = "/energyLevels/energyLevels_5.png";
-				break;			
-			default:
-				img_energyLevel = "/energyLevels/energyLevels_5.png";
-				break;
-		}
+            pane: {
+                size: '60%'
+            },
 
-		return img_energyLevel;
-	},
-	teamScore() {
-        let latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
-        let users = latestAcademy.users;
-        users.splice(0, 3);
-        let total_users = users.length;
-        let total_points = 0;
+            xAxis: {
+                categories: ['Device 1', 'Device 2', 'Device 3', 'Device 4', 'Device 5'],
+                tickmarkPlacement: 'on',
+                lineWidth: 0
+            },
 
-        $.each(users, function (index_users, value_users) {
+            yAxis: {
+                gridLineInterpolation: 'polygon',
+                lineWidth: 0,
+                min: 0
+            },
 
-            let user_points = 0;
+            tooltip: {
+                shared: true,
+                pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
+            },
 
-            if (value_users.score != undefined) {
-                $.each(value_users.score, function (index_score, value_score) {
-                    user_points += value_score.points;
-                });
-            }
+            legend: {
+                align: 'center',
+                verticalAlign: 'top',
+                y: 40,
+                layout: 'vertical'
+            },
 
-            value_users.totalScore = user_points;
-            total_points += user_points;
+            credits: {
+                enabled: false
+            },
 
-        });
+            series: [{
+                showInLegend: false,
+                name: 'Skills',
+                data: [
+                    device1(),
+                    device2(),
+                    device3(),
+                    device4(),
+                    device5()
+                ],
+                pointPlacement: 'on',
+                padding: 0
+            }]
+        };
+    },
+    
 
-        let average_points = (total_points / total_users - 1);
-        //console.log("average_points: " + average_points);
+    name() {
+        var userName = Session.get("loggedUser")[0].name;
+		return userName;
+    },
 
-        let teamScore = latestAcademy.teamScore;
-        let total_team_score = teamScore.length;
-        let total_team_points = 0;
+    devicesPick() {
 
-        $.each(teamScore, function(index_scores, value_scores) {
-
-            if (value_scores.points != undefined) {
-                total_team_points += value_scores.points;
-        }
-
-        });
-
-        let average_team_points = (total_team_points / total_team_score);
-        //console.log("average_team_points: " + average_team_points);
-
-        return parseInt(average_points + average_team_points);
+	    let nb = Session.get("loggedUser")[0].nb;
+        let user = getUserByNB(nb);
+        return user.devicesPick;
 
     },
-	currentRoomBadges() {
+    devicesDrop() {
 
-		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		var currentRoom = latestAcademy.currentRoom; 
-		//console.log("CurrentRoom: " + currentRoom);		
+	    let nb = Session.get("loggedUser")[0].nb;
+        let user = getUserByNB(nb);
+        return user.devicesDrop;
 
-		var mapRoom = Rooms.find({'name': currentRoom }).fetch();
+    },
+    socials() {
 
-		var roomBadges = new Array();
+	    let nb = Session.get("loggedUser")[0].nb;
+        let user = getUserByNB(nb);
+        return user.counter;
 
-		mapRoom[0].badges.forEach( function(badges){
+    }
+    /*
+    myBadges() {
+        let nb = Session.get(CURRENT_PLAYER_NB);
+        let user = getUserByNB(nb);
+        var badges = new Array();
 
-			var badgeName = badges.name; 
-			//console.log("BadgeName: " + badgeName);
+        user.score.forEach(function (score) {
+            if (score.countType === "BADGE") {
+                var badgeName = score.name;
+                var badge = Badges.find({ "name": badgeName }).fetch();
 
-			var badge = Badges.find({'name': badgeName }, {"name" : 1, "locked" : 1}).fetch();
-			var badgeImage = badge[0].image; 
-			//console.log("BadgeImage: " + badgeImage);		
-			var badgeStatus = "";
-			//console.log("badgelocked: " + badges.locked);
+                if (badge !== undefined && badge.name !== "") {
+                    if (badges.length > 0) {
+                        var check = false;
+                        badges.forEach(function (n) {
+                            if (n.name === badge[0].name) {
+                                var count = parseInt(n.count);
+                                count++;
+                                n.count = count;
+                                check = true;
+                            }
+                        });
 
-			if (badges.locked === true) { 
-				badgeStatus = "Locked";
-				console.log("badgeStatus: " + badgeStatus);
-			} else {
-				badgeStatus = "Unlocked";
-				console.log("badgeStatus: " + badgeStatus);
-			}
+                        if (!check) {
+                            var newBadge = { 'name': badge[0].name, 'image': badge[0].image, 'count': 1 };
+                            badges.push(newBadge);
+                        }
 
-			var newBadge = {'name': badgeName, 'image': badgeImage, 'status': badgeStatus };
-			roomBadges.push(newBadge);
-		});		
-
-		return roomBadges;
-	},	
-	badgeGandalfLocked() {
-	    
-		var secrets = Secrets.find({'discovered': true}).count() < 3;
-		//console.log("Secrets discovered: " + secrets);
-	    return secrets; 
-	},
-	message() {
-		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-
-		return latestAcademy.dailyMessage;
-
-	},	
-	decisionExists() {
-	    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		var currentRoom = latestAcademy.currentRoom; 
-		//console.log("CurrentRoom: " + currentRoom);
-	    var mapRoom = Rooms.find({'name': currentRoom }).fetch();
-		var decision = mapRoom[0].dailyDecision;
-	    //console.log("DecisionExists: " + decision);
-
-	    return decision; 
-	},
-	dailyDecision() {
-		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		var currentRoom = latestAcademy.currentRoom; 
-		//console.log("CurrentRoom: " + currentRoom);
-
-		var mapRoom = Rooms.find({'name': currentRoom }).fetch();
-		var decision = mapRoom[0].dailyDecision;
-		//console.log("Decision: " + decision);
-
-		return decision;
-	},
-	roomDescription() {
-		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		var currentRoom = latestAcademy.currentRoom; 
-		//console.log("CurrentRoom: " + currentRoom);
-
-		var mapRoom = Rooms.find({'name': currentRoom }).fetch();
-		var description = mapRoom[0].description;
-		//console.log("description: " + description);
-
-		return description;
-	},
-	currentDay() {
-
-		var d = new Date();
-    	var weekday = new Array(7);
-    	weekday[0]=  "Sunday";
-    	weekday[1] = "Monday";
-    	weekday[2] = "Tuesday";
-    	weekday[3] = "Wednesday";
-    	weekday[4] = "Thursday";
-    	weekday[5] = "Friday";
-    	weekday[6] = "Saturday";
-
-    	var currentDayOfWeek = weekday[d.getDay()];
-
-    	return currentDayOfWeek;
-	}
-
-
+                    } else {
+                        var newBadge = { 'name': badge[0].name, 'image': badge[0].image, 'count': 1 };
+                        badges.push(newBadge);
+                    }
+                }
+            }
+        });
+        return badges;
+    }
+    */
 });
+
+
+function getUserByNB(nb) {
+  let latestCollection = Umbrella.findOne({}, { sort: { date: -1, limit: 1 } });
+  let users = $.grep(latestCollection.users, function (e) { return e.nb == nb; });
+  return users[0];
+}
 
  /*
 Template.Map.events({  

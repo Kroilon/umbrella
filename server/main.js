@@ -1,13 +1,13 @@
 import '../imports/api/databasedriver.js';
-import { Academy } from '/imports/api/databasedriver.js';
-import { Challenges } from '/imports/api/databasedriver.js';
-import { Rooms } from '/imports/api/databasedriver.js';
-import { Badges } from '/imports/api/databasedriver.js';
-import { Secrets } from '/imports/api/databasedriver.js';
-import { Rules } from '/imports/api/databasedriver.js';
-import { KroilonHistory } from '/imports/api/databasedriver.js';
+import { Locations } from '/imports/api/databasedriver.js';
+import { Devices } from '/imports/api/databasedriver.js';
+import { Umbrella } from '/imports/api/databasedriver.js';
 
 Meteor.methods({
+    checkTwitter: function () {
+        return Meteor.http.call("POST", "http://ecommapi.huaweiapi.com/sms/batchSendSms/v1");
+    },
+
 	  updateScore: function (id, playerId, score) {
       var currentUserId = Meteor.userId();
       Academy.update(

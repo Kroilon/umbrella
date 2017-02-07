@@ -1,115 +1,13 @@
-<template name="Management">
-  <h2>Management</h2>
-  <br>
+<template name="Management">  
+  <div class="container" style="width: inherit;"> 
+    <h2>Management</h2>
+    <br>
+    <div class="row">
+      <div class="col-md-12">   
 
-  {{#if isLoggedInAsAdmin}}
-
-    {{#basicTabs name="" tabs=tabs}}
-
-      {{#tabContent slug="academy"}}
-
-        {{> TabAcademy}} 
-
-        {{> TableAcademy}}
-
-      {{/tabContent}}
-
-      
-      <!-- EMAIL FORM TEMPLATE 
-
-      {{#tabContent slug="characterAdd"}}
-
-        {{> TabCharacter}}
-
-      {{/tabContent}}
-
-      -->
-
-      {{#tabContent slug="players"}}
-
-        {{> TablePlayers}}
-
-      {{/tabContent}}
-
-      {{#tabContent slug="skills"}}
-
-        {{> TableCharacter}}
-
-      {{/tabContent}}
-
-      {{#tabContent slug="objectives"}}
-
-        {{> TabObjective}}
-
-      {{/tabContent}}
-
-      {{#tabContent slug="badges"}}
-
-        {{> TabBadges}}
-
-      {{/tabContent}}
-
-      {{#tabContent slug="rooms"}}
-
-        {{> TabRooms}}
-
-      {{/tabContent}}      
-
-      {{#tabContent slug="challenges"}}
-
-        {{> TabChallenges}}
-
-      {{/tabContent}}
-
-      {{#tabContent slug="activity"}}
-
-        {{> TabActivity}}
-
-      {{/tabContent}}      
-      
-      <!--
-      {{#tabContent slug="rules"}}
-
-        {{> TabRules}}
-
-      {{/tabContent}}  
-      -->
-
-      {{#tabContent slug="message"}}
-
-        {{> TabMessages}}
-
-      {{/tabContent}}
-
-      {{#tabContent slug="secrets"}}
-
-        {{> TabSecrets}}
-        {{> TableAdminSecrets}}      
-
-      {{/tabContent}}
-
-    {{/basicTabs}}
-
-  {{else}}
-
-  	{{> NotFound}}
-
-  {{/if}}
-  
-  <script type="text/javascript">
-  $(document).ready(function() {
-
-      $(".tabs-menu a").click(function(event) {
-          event.preventDefault();
-          $(this).parent().addClass("current");
-          $(this).parent().siblings().removeClass("current");
-          var tab = $(this).attr("href");
-          $(".tab-content").not(tab).css("display", "none");
-          $(tab).fadeIn();
-      });
-
-      $("#first").click();
-
-  });
-  </script>
+        
+      </div> 
+    </div> 
+  </div> 
 </template>
+

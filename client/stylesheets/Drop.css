@@ -1,0 +1,64 @@
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+.btn-circle {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  padding: 0px 0px 0px 0px;
+  font-size: 23px;
+  line-height: 1.00;
+  border-radius: 50px;
+  margin-top: 0.0em;
+}
+
+#deviceTable {
+	width: 100%; 
+    border-top-style: none; 
+    border-left-style: none; 
+    border-right-style: none; 
+    -webkit-box-shadow: none; 
+    -moz-box-shadow: none; 
+    -o-box-shadow: none; 
+    box-shadow: none;
+    margin-top: 1.5em;
+    font-size: 15px;
+}
+
+#deviceTable th {
+    vertical-align: middle; 
+    border-top-style: none; 
+    border-left-style: none; 
+    border-right-style: none; 
+    border-bottom-style: solid; 
+    border-bottom-width: 1px; 
+    border-bottom-color: #fcc000;
+}
+
+#deviceTable tr {
+    border-top-style: none; 
+    border-left-style: none; 
+    border-right-style: none; 
+    border: 1px solid #fff; 
+    background: #fff;
+}
+
+#deviceTable td {
+    vertical-align: middle; 
+    border-top-style: none; 
+    border-left-style: none; 
+    border-right-style: none; 
+    border-bottom-style: solid; 
+    border-bottom-width:1px; 
+    border-bottom-color: #ddd;
+}

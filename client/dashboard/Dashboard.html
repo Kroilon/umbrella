@@ -1,5 +1,107 @@
-<template name="Dashboard">
-  <div class="container"> 
+<template name="Dashboard">  
+  <div class="container" style="width: inherit;"> 
     <h2>Dashboard</h2>
-  </div>
+    <br>
+    <div class="container LeaderboardPersonalDashboard" style="width: inherit;">
+	    <div class="row">
+	      <div class="col-md-12">
+	        <div class="row">
+	          <div class="col-md-9">
+	            <div class="row">
+	              <div class="col-md-4">
+	                <img class="img avatar avatar-original"  width="150" height="150" id="characterAvatar" style="-webkit-user-select:none; display:block; margin:auto;" 
+	                  src="/profile.jpg" alt="Profile picture">
+	              </div>
+	              <div class="col-md-8">
+	                <h3 style="margin-top: 2.0em; text-align: left;">{{name}}</h3>
+	              </div>
+	              <!--
+	              <div class="col-md-5">
+		            <div class="row" >
+		              <div class="col-md-12" style="text-align: center;">
+		                <h3 style="margin-top: 0px; margin-bottom: 10px;">Socials</h3>
+		                <div class="myCircle" style="margin: 0 auto;"><p class="lead" style="font-size: 28px; line-height: 150px;">{{socials}}</p></div> 
+		              </div>
+		            </div>
+		          </div>
+		          -->
+	            </div>
+	            <div class="row">
+	              <hr style="color: #ffc000;">
+	            </div>
+	            <div class="row">
+	              <div class="col-md-4" style="padding-right: 0px;">
+	                <div class="row">
+	                  <div class="col-md-12" style="text-align: center; margin-bottom: 1.0em;">
+	                    <h4>My Devices <span class="glyphicon glyphicon-menu-up"></span></h4>
+	                  </div>
+	                  {{#each devicesPick}}
+		                  <div class="col-md-12">
+		                    <div class="row" style="text-align: center; margin-bottom: 0.25em;">
+		                      <div class="col-md-12 col-sm-12 col-xs-12">
+		                        <p class="lead" style="white-space: nowrap;">{{device}}</p>
+		                      </div>  
+		                    </div>
+		                  </div>
+	                  {{/each}}
+	                </div>
+	              </div>
+	              <div class="col-md-4" style="padding-right: 0px;">
+	                <div class="row">
+	                  <div class="col-md-12" style="text-align: center; text-align: center; margin-bottom: 1.0em;">
+	                    <h4>My Devices <span class="glyphicon glyphicon-menu-up"></span></h4>
+	                  </div>
+	                  {{#each devicesDrop}}
+		                  <div class="col-md-12">
+		                    <div class="row" style="text-align: center; margin-bottom: 0.25em;">
+		                      <div class="col-md-12 col-sm-12 col-xs-12">
+		                        <p class="lead" style="white-space: nowrap;">{{device}}</p>
+		                      </div>  
+		                    </div>
+		                  </div>
+	                  {{/each}}
+	                </div>
+	              </div>
+	              <div class="col-md-4">
+		            <div class="row" >
+		              <div class="col-md-12" style="text-align: center; margin-bottom: 1.0em;">
+	                    <h4>Socials</h4>
+	                  </div>
+		              <div class="col-md-12" style="text-align: center;">
+		                <div class="myCircle" style="margin: 0 auto;"><p class="lead" style="font-size: 28px; line-height: 150px;">{{socials}}</p></div> 
+		              </div>
+		            </div>
+		          </div>
+	              <!--
+	              <div class="col-md-4">
+	                <div class="row">
+	                  <div class="col-md-12" style="text-align: center; margin-bottom: 3.0em;">
+	                    <h4>Tap My Back</h4>
+	                  </div>
+	                </div>
+	                <div class="row">
+	                  <div class="col-md-7" style="padding-right: 0px; padding-left: 0px;">
+	                    <img class="img avatar avatar-original" style="-webkit-user-select:none; display:block; margin:auto; height: 75px; width: 75px;"
+	                      src="/like2.svg" alt="Avatar...">
+	                  </div>
+	                  <div class="col-md-5" style="text-align: center; padding-left: 5px; padding-right: 0px; margin-top: 1.0em;">
+	                    <h3>{{tapMyBackScore}}</h3> 
+	                  </div>
+	                </div>
+	              </div>
+	              -->
+	            </div>
+	          </div>
+	          <div class="col-md-3">
+	            <div class="row">
+	              <div class="col-md-12">
+	                {{> highchartsHelper chartId="playerSkills" chartWidth="100%" charHeight="60%" chartObject=playerSkillsChart}}
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>  
+  </div> 
 </template>

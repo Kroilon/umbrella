@@ -1,5 +1,70 @@
-<template name="Drop">
-  <div class="container"> 
+<template name="Drop">  
+  <div class="container" style="width: inherit;"> 
     <h2>Drop</h2>
-  </div>
+    <br>
+    <div class="container LeaderboardPersonalDashboard" style="width: inherit;">
+	    <div class="row">
+	      <div class="col-md-12">
+	        <div class="row">
+	          <div class="col-md-12">
+	            <div class="row">
+	              <div class="col-md-12">
+	                <img class="img avatar avatar-original"  width="200" height="200" id="characterAvatar" style="-webkit-user-select:none; display:block; margin:auto;" 
+	                  src="/dropQR.jpg" alt="Profile picture">
+	              </div>
+	            </div>
+	            <div class="row">
+	              <div class="col-md-1 " >
+	                <i class="glyphicon glyphicon-search"></i>
+	              </div>
+	              <div class="col-md-8 ">
+	              	<input class="form-control" placeholder="Search" type="text">			         
+			       </div>
+	            </div>
+	            <div class="row">
+	              <hr style="color: #ffc000;">
+	            </div>
+	            <div class="row">
+	              <div class="col-md-12" style="padding-right: 0px;">
+	                <div class="row">
+	                  <div class="col-md-12" style="text-align: center; margin-bottom: 1.0em;">
+	                    <h4>Available Devices <span class="glyphicon glyphicon-menu-up"></span></h4>
+	                  </div>
+	                  <table class="table table-hover table-striped table-bordered table-condensed" style="font-size:14px;" id="deviceTable">
+				          <thead>
+				            <tr>
+				              <th class="col-md-4"><span style="color:black; ">Name</span></th>
+				              <th class="col-md-4"><span style="color:black; ">Type</span></th>
+				              <th class="col-md-2"><span style="color:black; ">View</span></th>
+				              <th class="col-md-2"><span style="color:black; ">Select</span></th> 
+				            </tr>
+				          </thead>
+				          <tbody>
+				            {{#each allDevicesDrop}}
+				              <tr class="divRow" style="font-size: 0.9em;">
+				                <td>{{device}}</td>
+				                <td>IoT Umbrella Device</td>
+				                <td>
+				                  <a style="color: #fcc000" href="" id="viewDevice">
+				                    <span class="glyphicon glyphicon-search"></span> 
+				                  </a>
+				                </td>
+				                <td>
+				                  <a style="color: #fcc000" href="" id="addDevice">
+				                    <span class="glyphicon glyphicon-ok"></span>
+				                  </a>
+				                </td>
+				              </tr>                   
+				            {{/each}}
+				          </tbody>
+				       </table>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>  
+  </div> 
 </template>

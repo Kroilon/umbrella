@@ -26,7 +26,36 @@ db.umbrella.insert({
 			"avatar": "",
 			"email": "bojan.magusic@celfocus.com",
 			"password": "321",
-			"profile": "Admin"
+			"profile": "Admin",
+			"counter": 52,
+			"devicesPick":[
+				{
+					"device": "Device 1"
+				},
+				{
+					"device": "Device 2"
+				},
+				{
+					"device": "Device 3"
+				},
+				{
+					"device": "Device 4"
+				},
+				{
+					"device": "Device 5"
+				}
+			],	
+			"devicesDrop":[
+				{
+					"device": "Device 12"
+				},
+				{
+					"device": "Device 33"
+				},
+				{
+					"device": "Device 60"
+				}
+			]
 		},
 		{
 			"nb": "tesperança",

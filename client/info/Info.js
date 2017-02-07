@@ -14,6 +14,10 @@ Template.Info.events({
 
     event.preventDefault();
 
+    Meteor.call("checkTwitter", function(error, results) {
+        console.log(results.statusCode); //results.data should be a JSON object
+    });
+
     let description = $("#infoDescription").val();
     //console.log("DECRIPTION:" + description);
 
