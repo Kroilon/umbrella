@@ -36,15 +36,15 @@
 	                    <h3>Dropping points</h3>
 	                    <br>
 	                  </div>
-	                  {{#each dropLocations}}
 	                  	<div class="row">
-	                  		<div class="col-md-4">
+	                  		<div class="col-md-6">
 		                    <div class="row" style="text-align: center; margin-bottom: 0.25em;">
 		                      <div class="col-md-12 col-sm-12 col-xs-12">
-		                        <p class="lead" style="white-space: nowrap;">{{location}}</p> 
+		                        <p class="lead" style="white-space: nowrap;">Hotel Miragem</p> 
 		                      </div>  
 		                    </div>
 		                  </div>
+		                  <!--
 		                  <div class="col-md-4">
 		                    <div class="row" style="text-align: center; margin-bottom: 0.25em;">
 		                      <div class="col-md-12 col-sm-12 col-xs-12">
@@ -52,7 +52,8 @@
 		                      </div>  
 		                    </div>
 		                  </div>
-		                  <div class="col-md-4">
+		                  -->
+		                  <div class="col-md-6">
 		                    <div class="row" style="text-align: center; margin-bottom: 0.25em;">
 		                      <div class="col-md-12 col-sm-12 col-xs-12">
 		                        <a style="color: #fcc000" href="/{{location}}" id="selectDevice">
@@ -61,6 +62,34 @@
 		                      </div>  
 		                    </div>
 		                  </div>
+	                  	</div>		
+	                  {{#each dropLocations}}
+	                  	<div class="row">
+	                  		<div class="col-md-6">
+		                    <div class="row" style="text-align: center; margin-bottom: 0.25em;">
+		                      <div class="col-md-12 col-sm-12 col-xs-12">
+		                        <p class="lead" style="white-space: nowrap;">{{location}}</p> 
+		                      </div>  
+		                    </div>
+		                  </div>
+		                  <div class="col-md-6">
+		                    <div class="row" style="text-align: center; margin-bottom: 0.25em;">
+		                      <div class="col-md-12 col-sm-12 col-xs-12">
+		                        <p class="lead" style="white-space: nowrap;">{{distance}}</p>
+		                      </div>  
+		                    </div>
+		                  </div>
+		                  <!--
+		                  <div class="col-md-6">
+		                    <div class="row" style="text-align: center; margin-bottom: 0.25em;">
+		                      <div class="col-md-12 col-sm-12 col-xs-12">
+		                        <a style="color: #fcc000" href="/{{location}}" id="selectDevice">
+				                    <span class="glyphicon glyphicon-ok"></span>
+				                </a>
+		                      </div>  
+		                    </div>
+		                  </div>
+		                  -->
 	                  	</div>		                  
 	                  {{/each}}
 	                </div>

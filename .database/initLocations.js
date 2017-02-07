@@ -12,6 +12,7 @@ Step 3-> load(".database/initLocations.js")
 db.locations.drop();
 db.createCollection("locations");
 db.locations.insert([
+	/*
 	{
 		"date": "Sat Dec 17 2016 15:55:21",
 		"location": "Miragem Hotel",
@@ -21,6 +22,7 @@ db.locations.insert([
 		"nb": "",
 		"discovered": false
 	},
+	*/
 	{
 		"date": "Sat Dec 17 2016 15:55:21",
 		"location": "Hotel Estoril",
