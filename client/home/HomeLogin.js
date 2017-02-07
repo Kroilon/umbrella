@@ -27,7 +27,7 @@ Template.HomeLogin.events({
 
 			Session.set("loggedUser", user);
 
-			FlowRouter.go('/dashboard');
+			FlowRouter.go('/splash');
 		} else {
 			$('#loginPageMessage').show();
 			$('#loginPageMessage').text(WRONG_USERNAME_PASSWORD_MESSAGE);
