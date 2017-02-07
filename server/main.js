@@ -12,8 +12,14 @@ Meteor.methods({
       var apiUrl = 'http://222.92.146.245:5066/rating/balancemgmt/v1/balance?identityNumber=' + idNumber;
       console.log('apiUrl: ' +  apiUrl );
       var response = HTTP.call('GET', apiUrl, {} );
-      console.log('Response: ' +  response.content  );
-      return response;
+      console.log('Response: ' +  response.content );
+      let parseObj = JSON.parse(response.content);
+      console.log('JSON: ' +  parseObj );
+      let parseCode = parseObj.balanceDetail[0].currencyID;
+      console.log('CODE: ' +  parseCode );
+      let myString = "" + parseCode;
+      console.log('STRING: ' +  myString ); 
+      return parseCode;
     },
 
 

@@ -1,6 +1,28 @@
 import { Template } from 'meteor/templating';
 import { Umbrella } from '/imports/api/databasedriver.js';
-import { Devices } from '/imports/api/databasedriver.js';
+import { Devices } from '/imports/api/databasedriver.js'; 
+
+Template.Dashboard.created = function(){
+     
+    let balance = "NaN";
+
+    Meteor.call("getSocialsBalance","35118815503333", function(error, result) {
+        if (error) {
+            alert(error);
+        } else {
+            //Session.set("socialBalance", result);
+            //alert(JSON.stringify(result));
+            //document.getElementById("socialsID").value = JSON.stringify(result);
+            document.getElementById("socialsID").innerHTML = result;
+            balance = result;
+        }
+    });
+    Session.set("SOCIALS_VAR", balance);
+    
+    //console.log("OBJECT 2: " + balance);
+
+    
+}
 
 Template.Dashboard.helpers({
     playerSkillsChart() {
@@ -95,9 +117,16 @@ Template.Dashboard.helpers({
     },
     socials() {
 
-	    let nb = Session.get("loggedUser")[0].nb;
-        let user = getUserByNB(nb);
-        return user.counter;
+        let newBalance = Session.get("SOCIALS_VAR");
+        
+        //let obj = JSON.stringify(balance); 
+        //console.log("RESULT API CALL: " + balance);
+        //alert("RESULT API CALL: " + balance.resultCode);
+        //console.log("OBJECT 1: " +  balance.balanceDetail.accountType);
+        //console.log("OBJECT 2: " + obj);
+
+        //return balance.resultCode;
+        return newBalance;
 
     }
     /*

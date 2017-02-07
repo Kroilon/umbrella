@@ -30,30 +30,16 @@ db.umbrella.insert({
 			"counter": 52,
 			"devicesPick":[
 				{
-					"device": "Device 1"
-				},
-				{
-					"device": "Device 2"
-				},
-				{
-					"device": "Device 3"
-				},
-				{
-					"device": "Device 4"
-				},
-				{
-					"device": "Device 5"
+					"device": "uNews"
 				}
+				
 			],	
 			"devicesDrop":[
 				{
-					"device": "Device 12"
+					"device": "Umbrella"
 				},
 				{
-					"device": "Device 33"
-				},
-				{
-					"device": "Device 60"
+					"device": "uPower"
 				}
 			]
 		},
@@ -63,7 +49,22 @@ db.umbrella.insert({
 			"avatar": "",
 			"email": "tiago.esperança@celfocus.com",
 			"password": "321",
-			"profile": "Admin"
+			"profile": "Admin",
+			"counter": 52,
+			"devicesPick":[
+				{
+					"device": "uNews"
+				}
+				
+			],	
+			"devicesDrop":[
+				{
+					"device": "Umbrella"
+				},
+				{
+					"device": "uPower"
+				}
+			]
 		},
 		{
 			"nb": "admibn",
