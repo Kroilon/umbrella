@@ -6,6 +6,28 @@ import { Session } from 'meteor/session';
 
 import { DROP_SCAN_LOCATION } from '/client/drop/scan/DropScan.js';
 
+Template.ScanPayment.created = function(){
+     
+    let balance = "NaN";
+
+    Meteor.call("checkSLA", function(error, result) {
+        if (error) {
+            alert(error);
+        } else {
+            //Session.set("socialBalance", result);
+            //alert(JSON.stringify(result));
+            //document.getElementById("socialsID").value = JSON.stringify(result);
+            //alert(JSON.stringify(result));
+            document.getElementById("mySLA").innerHTML = "SLA: Checked";
+           
+        }
+    });
+    
+    //console.log("OBJECT 2: " + balance);
+
+    
+}
+
 Template.ScanPayment.helpers({
 
 	dropLocation() {

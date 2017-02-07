@@ -22,6 +22,22 @@ Meteor.methods({
       return parseCode;
     },
 
+    checkSLA: function () {
+      console.log('Method.checkSLA');
+      var apiUrl = 'http://env-0693795.jelastic.servint.net/DSLAManagement/api/slaManagement/v2/sla';
+      console.log('apiUrl: ' +  apiUrl );
+      var options = { 'postman-token': '4a6245d3-94c4-18b7-9ebd-64c42455505f',
+          'cache-control': 'no-cache',
+          'accept': 'application/json',
+          'content-type': 'application/json' };
+      var response = HTTP.call('GET', apiUrl, options );
+      console.log('Response: ' +  response.content );
+      let parseObj = JSON.parse(response.content);
+      console.log('JSON: ' +  parseObj );
+      let parseCode = parseObj.id;
+      console.log('CODE: ' +  parseCode );
+      return parseCode;
+    },
 
   
 	  updateScore: function (id, playerId, score) {
