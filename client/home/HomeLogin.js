@@ -19,6 +19,22 @@ Template.HomeLogin.events({
 			return e.nb == userID;
 		});
 
+		/*
+		let balance;
+		Meteor.call("getSocialsBalance","35118815503333", function(error, result) {
+			if (error) {
+				alert(error);
+			} else {
+				Session.set("socialBalance", result);
+				balance = result;
+			}
+		});
+		alert("BALANCE: " + balance);
+
+		console.log("RESULT API CALL: " + balance);
+		*/
+
+
 		var supposedlyLoggedUser = user[0];
 		if (supposedlyLoggedUser
 			&& supposedlyLoggedUser.nb == userID

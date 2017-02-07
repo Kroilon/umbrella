@@ -2,13 +2,17 @@ import '../imports/api/databasedriver.js';
 import { Locations } from '/imports/api/databasedriver.js';
 import { Devices } from '/imports/api/databasedriver.js';
 import { Umbrella } from '/imports/api/databasedriver.js';
+import { HTTP } from 'meteor/http';
+
 
 Meteor.methods({
 
     getSocialsBalance: function (idNumber) {
       console.log('Method.getSocialsBalance for', idNumber);
       var apiUrl = 'http://222.92.146.245:5066/rating/balancemgmt/v1/balance?identityNumber=' + idNumber;
-      var response = HTTP.get(apiUrl).data;
+      console.log('apiUrl: ' +  apiUrl );
+      var response = HTTP.call('GET', apiUrl, {} );
+      console.log('Response: ' +  response.content  );
       return response;
     },
 
